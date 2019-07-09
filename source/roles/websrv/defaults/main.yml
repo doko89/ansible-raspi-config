@@ -1,0 +1,9 @@
+packages:
+  - nginx
+  - curl
+  - sqlite3
+  - unzip
+  - supervisor
+  - php-fpm
+  - php-curl
+  - php-sqlite3

@@ -1,0 +1,28 @@
+- name: download latest mikhmon
+  unarchive:
+    src: https://github.com/laksa19/mikhmonv3/archive/master.zip
+    dest: /tmp
+    owner: www-data
+    group: www-data
+    remote_src: yes
+
+- name: copy mikhmon file
+  copy:
+    src: /tmp/mikhmonv3-master/
+    dest: /var/www/mikhmon
+    owner: www-data
+    group: www-data
+    remote_src: yes
+
+- name: setup virtualhost mikhmon
+  template:
+    src: mikhmon.conf.j2
+    dest: /etc/nginx/conf.d/mikhmon.conf
+  register: vhost_mikhmon
+
+- name: restart nginx service
+  systemd:
+    name: nginx
+    state: restarted
+  when: vhost_mikhmon.changed
+

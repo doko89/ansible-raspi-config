@@ -1,0 +1,37 @@
+- name: create directory
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - /opt/dotnet
+    - /etc/dns
+
+- name: download packages
+  unarchive:
+    src: https://download.technitium.com/dns/DnsServerPortable.tar.gz
+    dest: /etc/dns
+    remote_src: yes
+
+- name: enable systemd
+  copy:
+    src: /etc/dns/systemd.service 
+    dest: /etc/systemd/system/dns.service
+    remote_src: yes
+
+- name: download dotnet core 2.2
+  unarchive:
+    src: https://download.visualstudio.microsoft.com/download/pr/cd6635b9-f6f8-4c2d-beda-2e381fe39586/740973b83c199bf863a51c83a2432151/aspnetcore-runtime-2.2.5-linux-arm.tar.gz
+    dest: /opt/dotnet
+    remote_src: yes
+
+- name: create link dotnet binary
+  file:
+    src: /opt/dotnet/dotnet
+    dest: /usr/bin/dotnet
+    state: link
+
+- name: start system dns
+  systemd:
+    name: dns
+    state: started
+    daemon_reload: yes

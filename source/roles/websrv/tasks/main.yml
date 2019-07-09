@@ -1,0 +1,8 @@
+- name: install packages
+  include: install.yml
+
+- name: configure nginx
+  include: ngx-configure.yml
+
+#- name: configure php-fpm
+#  include: fpm-configure.yml

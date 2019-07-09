@@ -1,0 +1,10 @@
+server {
+	listen 80;
+	server_name {{ domain }};
+	
+	root /var/www/mikbotam;
+	index index.php;
+
+	include php_params;
+
+}

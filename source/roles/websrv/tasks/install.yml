@@ -1,0 +1,10 @@
+- name: update repositories
+  apt:
+    update_cache: yes
+    force_apt_get: true
+
+- name: install apt
+  apt:
+    name: "{{ packages }}"
+    state: present
+    force_apt_get: true

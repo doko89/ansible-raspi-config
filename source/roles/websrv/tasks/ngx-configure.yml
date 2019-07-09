@@ -1,0 +1,9 @@
+- name: copy php config
+  template:
+    src: php_params.j2
+    dest: /etc/nginx/php_params
+
+- name: remove default config
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
