@@ -36,6 +36,13 @@
     state: restarted
   when: polling.changed
 
+- name: patch router os v6.45.1
+  template:
+    src: routeros_api.class.php.j2
+    dest: /var/www/mikbotam/Api/routeros_api.class.php
+    owner: www-data
+    group: www-data
+
 - include: mysql-setup.yml
 
 - include: sqlite-setup.yml
