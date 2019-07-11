@@ -1,6 +1,6 @@
 - name: install mysql server
   apt:
-    name: {{ packages }}
+    name: "{{ packages }}"
     state: installed
 
 - name: check mysql service is started
