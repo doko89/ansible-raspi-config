@@ -1,0 +1,16 @@
+- name: copy example db
+  template:
+    src: mibotam.db
+    dest: /var/www/mikbotam/config/mibotam.db
+    owner: www-data
+    group: www-data
+  when: database == "sqlite"
+
+- name: copy sqlite configuration
+  template:
+    src: sqlite.config.php.j2
+    dest: /var/www/mikbotam/config/system.config.php
+    owner: www-data
+    group: www-data
+  when: database == "sqlite"
+
