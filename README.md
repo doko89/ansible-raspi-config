@@ -21,6 +21,7 @@ cd ansible-raspi-config
 
 note:
 ```
-karena masih belum dapat example db sqlite, jadi mikbotam versi sqlite belum bisa digunakan
+- karena masih belum dapat example db sqlite, jadi mikbotam versi sqlite belum bisa digunakan
+- polling bot telegram dijalankan menggunakan service supervisor, jadi jika ada perubahan silahkan restart supervisornya, kalau ngga tau sama sekali cara gampangnya restart aja raspberry/vm nya
 ```
 
