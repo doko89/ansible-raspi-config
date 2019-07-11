@@ -8,10 +8,10 @@ fi
 
 dep (){
 apt update
-apt install -y python-pip virtualenv
+apt install -y python-pip virtualenv python3-mysqldb
 virtualenv env
 source env/bin/activate
-pip install ansible PyMySQL
+pip install ansible
 }
 
 selesai (){
