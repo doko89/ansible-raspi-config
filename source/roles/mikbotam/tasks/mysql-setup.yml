@@ -1,14 +1,14 @@
 - name: create user for app
   mysql_user:
-    name: {{ dbuser }}
-    password: {{ dbpass }}
+    name: "{{ dbuser }}"
+    password: "{{ dbpass }}"
     priv: '*.*:ALL'
     state: present
   when: database == "mysql"
 
 - name: create database
   mysql_db:
-    name: {{ dbname }}
+    name: "{{ dbname }}"
     state: present
     target: /var/www/mikbotam/config/Newdatabase.sql
   when: database == "mysql"

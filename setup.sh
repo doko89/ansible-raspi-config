@@ -11,7 +11,7 @@ apt update
 apt install -y python-pip virtualenv
 virtualenv env
 source env/bin/activate
-pip install ansible
+pip install ansible PyMySQL
 }
 
 selesai (){
