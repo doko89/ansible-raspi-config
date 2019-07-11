@@ -27,6 +27,7 @@ echo "2. install mysql"
 echo "3. isntall mikbotam"
 echo "4. install mikhmon"
 echo "5. install dns server (raspberry pi ubuntu arm only)"
+echo "6. exit"
 read -p "pilih : " pilih
 func
 }
@@ -49,6 +50,9 @@ elif [ "$pilih" -eq 4 ];then
 elif [ "$pilih" -eq 5 ];then
         ansible-playbook -i source/inventory source/dns.yml --extra-vars="interpreter_python= auto_silent"
 	menu
+elif [ "$pilih" -eq 6 ];then
+	echo "bye!!!"
+	exit 0;
 else
         echo "pilihan yang anda masukkan salah"
         exit 0;
