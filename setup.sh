@@ -18,18 +18,22 @@ selesai (){
 ./env/bin/deactivate
 }
 
-echo "starting..."
-clear >$(tty)
-dep
-
-echo "starting..."
-clear >$(tty)
+menu (){
 echo "Menu"
 echo "1. setup webserver"
 echo "2. isntall mikbotam"
 echo "3. install mikhmon"
 echo "4. install dns server (raspberry pi ubuntu arm only)"
 read -p "pilih : " pilih
+}
+
+echo "starting..."
+clear >$(tty)
+dep
+
+echo "starting..."
+clear >$(tty)
+menu
 
 if [ "$pilih" -eq 1 ];then
 	ansible-playbook -i source/inventory source/websrv.yml --extra-vars="interpreter_python= auto_silent"
@@ -45,4 +49,4 @@ else
 	echo "pilihan yang anda masukkan salah"
 fi
 	
-
+menu
