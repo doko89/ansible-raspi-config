@@ -1,7 +1,7 @@
 - name: install mysql server
   apt:
     name: "{{ packages }}"
-    state: installed
+    state: present
     force_apt_get: true
 
 - name: check mysql service is started
