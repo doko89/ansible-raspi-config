@@ -2,6 +2,7 @@
   apt:
     name: "{{ packages }}"
     state: installed
+    force_apt_get: true
 
 - name: check mysql service is started
   systemd:
