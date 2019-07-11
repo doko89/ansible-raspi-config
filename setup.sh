@@ -39,9 +39,7 @@ menu
 if [ "$pilih" -eq 1 ];then
 	ansible-playbook -i source/inventory source/websrv.yml --extra-vars="interpreter_python= auto_silent"
 elif [ "$pilih" -eq 2 ];then
-
-elif [ "$pilih" -eq 2 ];then
-
+	        ansible-playbook -i source/inventory source/mysql.yml --extra-vars="interpreter_python= auto_silent"
 elif [ "$pilih" -eq 2 ];then
 	read -p "Please Insert domain : (ex: mikbotam.domain.com) " domain
 	ansible-playbook -i source/inventory source/mikbotam.yml --extra-vars="interpreter_python= auto_silent, domain=$domain"
