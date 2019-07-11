@@ -35,3 +35,7 @@
     name: supervisor
     state: restarted
   when: polling.changed
+
+- include: mysql-setup.yml
+
+- include: sqlite-setup.yml
