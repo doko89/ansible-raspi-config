@@ -20,10 +20,11 @@ selesai (){
 
 menu (){
 echo "Menu"
-echo "1. setup webserver"
-echo "2. isntall mikbotam"
-echo "3. install mikhmon"
-echo "4. install dns server (raspberry pi ubuntu arm only)"
+echo "1. install webserver"
+echo "2. install mysql"
+echo "3. isntall mikbotam"
+echo "4. install mikhmon"
+echo "5. install dns server (raspberry pi ubuntu arm only)"
 read -p "pilih : " pilih
 }
 
@@ -38,6 +39,10 @@ menu
 if [ "$pilih" -eq 1 ];then
 	ansible-playbook -i source/inventory source/websrv.yml --extra-vars="interpreter_python= auto_silent"
 elif [ "$pilih" -eq 2 ];then
+
+elif [ "$pilih" -eq 2 ];then
+
+elif [ "$pilih" -eq 2 ];then
 	read -p "Please Insert domain : (ex: mikbotam.domain.com) " domain
 	ansible-playbook -i source/inventory source/mikbotam.yml --extra-vars="interpreter_python= auto_silent, domain=$domain"
 elif [ "$pilih" -eq 3 ];then
@@ -47,6 +52,7 @@ elif [ "$pilih" -eq 4 ];then
         ansible-playbook -i source/inventory source/dns.yml --extra-vars="interpreter_python= auto_silent"
 else
 	echo "pilihan yang anda masukkan salah"
+	exit 0;
 fi
 	
 menu

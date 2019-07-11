@@ -2,10 +2,6 @@
   become: yes
   gather_facts: no
   vars_prompt:
-    - name: domain
-      promt: "silahkan masukkan domain untuk aplikasi mikbotam"
-      private: no
-
     - name: database
       prompt: "silahkan pilih database yang ingin digunakan (mysql/sqlite)"
       private: no
