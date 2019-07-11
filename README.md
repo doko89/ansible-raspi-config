@@ -16,7 +16,7 @@ step:
 ```
 git clone https://github.com/doko89/ansible-raspi-config.git
 cd ansible-raspi-config
-./setup
+./setup.sh
 ```
 
 note:
