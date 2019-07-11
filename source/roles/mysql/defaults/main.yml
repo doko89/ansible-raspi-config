@@ -1,2 +1,6 @@
 dbuser: app_user
 dbpass: t3Vl2I8G7w38E
+
+packages:
+  - mariadb-server
+  - php-mysql
