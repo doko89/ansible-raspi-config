@@ -18,3 +18,9 @@ git clone https://github.com/doko89/ansible-raspi-config.git
 cd ansible-raspi-config
 ./setup
 ```
+
+note:
+```
+karena masih belum dapat example db sqlite, jadi mikbotam versi sqlite belum bisa digunakan
+```
+
