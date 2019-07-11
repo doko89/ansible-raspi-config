@@ -40,13 +40,13 @@ if [ "$pilih" -eq 1 ];then
 	ansible-playbook -i source/inventory source/websrv.yml --extra-vars="interpreter_python= auto_silent"
 elif [ "$pilih" -eq 2 ];then
 	        ansible-playbook -i source/inventory source/mysql.yml --extra-vars="interpreter_python= auto_silent"
-elif [ "$pilih" -eq 2 ];then
+elif [ "$pilih" -eq 3 ];then
 	read -p "Please Insert domain : (ex: mikbotam.domain.com) " domain
 	ansible-playbook -i source/inventory source/mikbotam.yml --extra-vars="interpreter_python= auto_silent, domain=$domain"
-elif [ "$pilih" -eq 3 ];then
+elif [ "$pilih" -eq 4 ];then
 	read -p "Please Insert domain : (ex: mikhmon.domain.com) " domain
         ansible-playbook -i source/inventory source/mikhmon.yml --extra-vars="interpreter_python= auto_silent, domain=$domain"
-elif [ "$pilih" -eq 4 ];then
+elif [ "$pilih" -eq 5 ];then
         ansible-playbook -i source/inventory source/dns.yml --extra-vars="interpreter_python= auto_silent"
 else
 	echo "pilihan yang anda masukkan salah"
