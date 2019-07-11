@@ -10,3 +10,8 @@ http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/ubuntu-18.04.2-preinstal
 
 raspi 3
 http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/ubuntu-18.04.2-preinstalled-server-armhf+raspi3.img.xz
+
+step:
+git clone https://github.com/doko89/ansible-raspi-config.git
+cd ansible-raspi-config
+./setup
