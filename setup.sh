@@ -8,15 +8,9 @@ fi
 
 dep (){
 apt update
-apt install -y python-pip virtualenv python3-mysqldb
-virtualenv env
-source env/bin/activate
-pip install ansible
+apt install -y python3-mysqldb ansible
 }
 
-selesai (){
-./env/bin/deactivate
-}
 
 menu (){
 echo "starting..."
