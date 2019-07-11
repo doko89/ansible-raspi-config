@@ -9,7 +9,7 @@
 - name: create database
   mysql_db:
     name: "{{ dbname }}"
-    state: present
+    state: import
     target: /var/www/mikbotam/config/Newdatabase.sql
   when: database == "mysql"
 
