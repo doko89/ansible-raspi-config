@@ -3,7 +3,7 @@
 
 [local:vars]
 ansible_connection=local
-ansible_python_interpreter=auto_silent
+#ansible_python_interpreter=auto_silent
 
 [raspi]
 192.168.182.236
