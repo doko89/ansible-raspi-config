@@ -19,6 +19,8 @@ selesai (){
 }
 
 menu (){
+echo "starting..."
+clear >$(tty)
 echo "Menu"
 echo "1. install webserver"
 echo "2. install mysql"
@@ -56,8 +58,5 @@ fi
 echo "starting..."
 clear >$(tty)
 dep
-
-echo "starting..."
-clear >$(tty)
 menu
 	
