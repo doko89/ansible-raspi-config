@@ -7,12 +7,7 @@
     remote_src: yes
 
 - name: copy mikhmon file
-  copy:
-    src: /tmp/mikhmonv3-master/
-    dest: /var/www/mikhmon
-    owner: www-data
-    group: www-data
-    remote_src: yes
+  command: mv /tmp/mikhmonv3-master /var/www/mikhmon
 
 - name: setup virtualhost mikhmon
   template:
