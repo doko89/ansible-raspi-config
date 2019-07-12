@@ -1,11 +1,3 @@
-- name: copy example db
-  template:
-    src: mibotam.db
-    dest: /var/www/mikbotam/config/mibotam.db
-    owner: www-data
-    group: www-data
-  when: database == "sqlite"
-
 - name: copy example sqlite db
   file:
     src: files/mibotam.db
