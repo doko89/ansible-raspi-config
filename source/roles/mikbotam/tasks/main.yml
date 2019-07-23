@@ -52,6 +52,6 @@
     owner: www-data
     group: www-data
 
-- include: mysql-setup.yml
+#- include: mysql-setup.yml
 
-- include: sqlite-setup.yml
+#- include: sqlite-setup.yml
