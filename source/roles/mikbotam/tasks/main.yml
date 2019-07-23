@@ -7,10 +7,19 @@
 
 - name: extract file mikbotam
   unarchive:
-    src: files/mikbotam-1.8.tar.gz
+    src: files/Mikbotam.sqlite.zip
     dest: /var/www/mikbotam
     owner: www-data
     group: www-data
+  when: database == "sqlite"
+
+- name: extract file mikbotam
+  unarchive:
+    src: files/Mikbotam.zip
+    dest: /var/www/mikbotam
+    owner: www-data
+    group: www-data
+  when: database == "mysql"
 
 - name: setup virtualhost mikbotam
   template:
