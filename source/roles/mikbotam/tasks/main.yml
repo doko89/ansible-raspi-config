@@ -5,6 +5,14 @@
     owner: www-data
     group: www-data
 
+- name: extract file mikbotam mysql version
+  unarchive:
+    src: files/Mikbotam.zip
+    dest: /var/www/mikbotam
+    owner: www-data
+    group: www-data
+  when: database == "mod"
+
 - name: extract file mikbotam sqlite version
   unarchive:
     src: files/Mikbotam.sqlite.zip
@@ -15,7 +23,7 @@
 
 - name: extract file mikbotam mysql version
   unarchive:
-    src: files/Mikbotam.zip
+    src: files/Mikbotam.mysql.zip
     dest: /var/www/mikbotam
     owner: www-data
     group: www-data
@@ -39,18 +47,28 @@
     dest: /etc/supervisor/conf.d/mikbotam-polling.conf
   register: polling
 
+- name: patch router os v4.44
+  template:
+    src: routeros_api.class-4.44.php.j2
+    dest: /var/www/mikbotam/Api/routeros_api.class.php
+    owner: www-data
+    group: www-data
+  when: ros == "4.44"
+
+- name: patch router os v6.45
+  template:
+    src: routeros_api.class-4.65.php.j2
+    dest: /var/www/mikbotam/Api/routeros_api.class.php
+    owner: www-data
+    group: www-data
+  when: ros == "6.45"
+
 - name: restart supervisor service
   systemd:
     name: supervisor
     state: restarted
   when: polling.changed
 
-- name: patch router os v6.45.1
-  template:
-    src: routeros_api.class.php.j2
-    dest: /var/www/mikbotam/Api/routeros_api.class.php
-    owner: www-data
-    group: www-data
 
 - include: mysql-setup.yml
 

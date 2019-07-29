@@ -3,7 +3,10 @@
   gather_facts: no
   vars_prompt:
     - name: database
-      prompt: "silahkan pilih database yang ingin digunakan (mysql/sqlite)"
+      prompt: "silahkan pilih database yang ingin digunakan (MOD/mysql/sqlite)"
+      private: no
+    - name: ros
+      prompt: "Versi ROS (4.44/4.65)"
       private: no
   roles:
     - mikbotam

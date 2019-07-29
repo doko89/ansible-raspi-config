@@ -21,3 +21,10 @@
     group: www-data
   when: database == "mysql"
 
+- name: copy mysql configuration
+  template:
+    src: mysql.config.php.j2
+    dest: /var/www/mikbotam/config/system.config.php
+    owner: www-data
+    group: www-data
+  when: database == "mod"
